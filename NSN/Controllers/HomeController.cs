@@ -1,17 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NSN.Biblioteca;
 using NSN.Models;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace NSN.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        public Conexao ConnFur = new Conexao(ConexaoName.Furacao);
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -20,6 +21,19 @@ namespace NSN.Controllers
 
         public IActionResult Index()
         {
+
+            if (ConnFur.AbreConexao())
+            {
+                string x = @"select codcli from clientes where codcli = 10125";
+
+                ConnFur.Conn.BeginTransaction();
+
+                int id = Convert.ToInt32(ConnFur.Conn.ExecuteScalar(x));
+
+
+                ConnFur.FechaConexao();
+            }
+
             return View();
         }
 
