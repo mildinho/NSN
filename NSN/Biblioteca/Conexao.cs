@@ -6,50 +6,62 @@ namespace NSN.Biblioteca
 {
     public enum ConexaoName
     {
-        Furacao = 1,
-        Its = 2
+        Furacao,
+        Its,
+        Sav
     }
-    public static class Conexao
+
+    public class Conexao
     {
-        public static string Host { get; set; }
-        public static string UserName { get; set; }
-        public static string Password { get; set; }
-        public static string Database { get; set; }
-        public static string ServiceName { get; set; }
+        public ConexaoName ConexaoAtiva { get; set; }
+        public string Host { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string Porta { get; set; }
+        public string Database { get; set; }
+        public string ServiceName { get; set; }
+        public string DataSource { get; set; }
+        public OracleConnection Conn { get; set; }
 
-        public static string RetornaStringConexao(ConexaoName Name)
+        public Conexao(ConexaoName Name)
         {
-            string retornoConexao = "";
-
             if (Name == ConexaoName.Furacao)
             {
-                Conexao.Host = "Sacanr2.furacao.com.br";
-                Conexao.UserName = "furacaophp";
-                Conexao.Password = "furacao123php";
-                Conexao.Database = "ofuracao";
-                Conexao.ServiceName = "ofuracaoee";
+                this.ConexaoAtiva = Name;
+                this.Host = "Sacanr2.furacao.com.br";
+                this.UserName = "furacaophp";
+                this.Password = "furacao123php";
+                this.Database = "ofuracao";
+                this.ServiceName = "ofuracaoee";
+                this.Porta = "1521";
+                this.DataSource = String.Format("(DESCRIPTION =  (ADDRESS = (PROTOCOL = TCP)(HOST = {0})(PORT = {1})) (CONNECT_DATA = (SERVICE_NAME = {2}) (SERVER = DEDICATED) ) ) ", this.Host, this.Porta, this.ServiceName);
 
-                retornoConexao = String.Format("Server={0};Port=3306;Database={1};Uid={2};Pwd={3};", Conexao.Host, Conexao.Database, Conexao.UserName, Conexao.Password);
             }
+        }
+
+        public string RetornaStringConexao()
+        {
+            string retornoConexao = String.Format("User Id={0};Password={1};Data Source={2};", this.UserName, this.Password, this.DataSource);
+
             return retornoConexao;
         }
 
-        public static OracleConnection AbreConexao(ConexaoName Name)
+        public OracleConnection AbreConexao()
         {
-            var conn = new OracleConnection(RetornaStringConexao(Name));
+            Conn = new OracleConnection(RetornaStringConexao());
             {
-                conn.Open();
-                if (conn.State == ConnectionState.Open)
+                Conn.Open();
+                if (Conn.State == ConnectionState.Open)
                 {
-                    return conn;
+                    return Conn;
                 }
             }
             return null;
         }
 
-        public static void FechaConexao(OracleConnection conn)
+        public void FechaConexao()
         {
-            conn.Close();
+            Conn.Close();
         }
 
     }
