@@ -1,10 +1,9 @@
-﻿using Dapper;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NSN.Biblioteca;
 using NSN.Models;
-using System;
 using System.Diagnostics;
+using System.Linq;
 
 
 namespace NSN.Controllers
@@ -22,14 +21,15 @@ namespace NSN.Controllers
         public IActionResult Index()
         {
 
-            if (ConnFur.AbreConexao())
+            if (ConnFur.AbreConexao(true))
             {
-                string x = @"select codcli from clientes where codcli = 10125";
+                string x = @"select codcli from clientes where codcli = :nCodCli";
+                long nCodcli = 10125;
 
-                ConnFur.Conn.BeginTransaction();
 
-                int id = Convert.ToInt32(ConnFur.Conn.ExecuteScalar(x));
+                var id = ConnFur.SQLSelect<int>(x, new { nCodcli }).SingleOrDefault();
 
+                ConnFur.Transacao.Commit();
 
                 ConnFur.FechaConexao();
             }

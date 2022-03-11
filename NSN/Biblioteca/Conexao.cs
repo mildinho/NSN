@@ -1,6 +1,8 @@
-﻿using System;
-using System.Data;
+﻿using Dapper;
 using Oracle.ManagedDataAccess.Client;
+using System;
+using System.Collections.Generic;
+using System.Data;
 
 namespace NSN.Biblioteca
 {
@@ -22,6 +24,7 @@ namespace NSN.Biblioteca
         private string ServiceName { get; set; }
         private string DataSource { get; set; }
         public OracleConnection Conn { get; set; }
+        public OracleTransaction Transacao { get; set; }
 
         public Conexao(ConexaoName Name)
         {
@@ -46,7 +49,7 @@ namespace NSN.Biblioteca
             return retornoConexao;
         }
 
-        public bool AbreConexao()
+        public bool AbreConexao(bool lTransacao = false)
         {
             try
             {
@@ -55,19 +58,53 @@ namespace NSN.Biblioteca
                     Conn.Open();
                     if (Conn.State == ConnectionState.Open)
                     {
+                        if (lTransacao)
+                        {
+                            Transacao = Conn.BeginTransaction();
+                        }
                         return true;
                     }
                     return false;
                 }
             }
-            catch (InvalidCastException error) { return false; };
+            catch (OracleException error)
+            {
+                return false;
+            };
 
         }
 
+        public IEnumerable<T> SQLSelect<T>(string cSql,object oParam = null)
+        {
+            try
+            {
+                IDbTransaction iTransaction = null;
+                if (Transacao != null)
+                {
+                    iTransaction = Transacao;
+                }
+
+                var retorno = Conn.Query<T>(cSql,oParam,iTransaction);
+
+                return retorno;
+            }
+            catch (OracleException error)
+            {
+                return null;
+            };
+
+        }
 
         public void FechaConexao()
         {
-            Conn.Close();
+            try
+            {
+                Conn.Close();
+            }
+            catch (OracleException error)
+            {
+
+            }
         }
 
     }
