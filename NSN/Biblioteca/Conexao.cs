@@ -1,9 +1,8 @@
-﻿using Dapper;
-using Oracle.ManagedDataAccess.Client;
-using Oracle.ManagedDataAccess.Types;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
+using System.Collections.Generic;
+using Dapper;
+using Oracle.ManagedDataAccess.Client;
 
 namespace NSN.Biblioteca
 {
