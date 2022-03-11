@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Dapper;
 using Oracle.ManagedDataAccess.Client;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace NSN.Biblioteca
 {
@@ -16,6 +17,8 @@ namespace NSN.Biblioteca
 
     public class Conexao
     {
+
+        private readonly ILogger _logger;
         private ConexaoName ConexaoAtiva { get; set; }
         private string Host { get; set; }
         private string UserName { get; set; }
@@ -70,6 +73,7 @@ namespace NSN.Biblioteca
             }
             catch (OracleException error)
             {
+                _logger.LogError(error.Message);
                 return false;
             };
 
@@ -91,6 +95,8 @@ namespace NSN.Biblioteca
             }
             catch (OracleException error)
             {
+                
+                _logger.LogError(error.Message);
                 return null;
             };
 
@@ -114,9 +120,10 @@ namespace NSN.Biblioteca
             }
             catch (OracleException error)
             {
-
+                _logger.LogError(error.Message);
             }
         }
+
 
     }
 }
