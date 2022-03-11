@@ -24,10 +24,12 @@ namespace NSN.Controllers
             if (ConnFur.AbreConexao(true))
             {
                 string x = @"select codcli from clientes where codcli = :nCodCli";
-                long nCodcli = 10125;
+                var param = ConnFur.DefineParametros();
+
+                param.Add("nCodcli", 10125);
 
 
-                var id = ConnFur.SQLSelect<int>(x, new { nCodcli }).SingleOrDefault();
+                var id = ConnFur.SQLSelect<int>(x, param).SingleOrDefault();
 
                 ConnFur.Transacao.Commit();
 

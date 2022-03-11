@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -74,7 +75,7 @@ namespace NSN.Biblioteca
 
         }
 
-        public IEnumerable<T> SQLSelect<T>(string cSql,object oParam = null)
+        public IEnumerable<T> SQLSelect<T>(string cSql, object oParam = null)
         {
             try
             {
@@ -84,7 +85,7 @@ namespace NSN.Biblioteca
                     iTransaction = Transacao;
                 }
 
-                var retorno = Conn.Query<T>(cSql,oParam,iTransaction);
+                var retorno = Conn.Query<T>(cSql, oParam, iTransaction);
 
                 return retorno;
             }
@@ -95,10 +96,20 @@ namespace NSN.Biblioteca
 
         }
 
+        public DynamicParameters DefineParametros()
+        {
+            var retorno = new DynamicParameters();
+            return retorno;
+        }
+
         public void FechaConexao()
         {
             try
             {
+                if (Transacao != null)
+                {
+                    Transacao = null;
+                }
                 Conn.Close();
             }
             catch (OracleException error)
