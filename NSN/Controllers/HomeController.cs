@@ -4,7 +4,7 @@ using NSN.Biblioteca;
 using NSN.Models;
 using System.Diagnostics;
 using System.Linq;
-
+using System.Threading.Tasks;
 
 namespace NSN.Controllers
 {
@@ -18,10 +18,10 @@ namespace NSN.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
 
-            if (ConnFur.AbreConexao(true))
+            if (await ConnFur.AbreConexao(true))
             {
                 string x = @"select codcli from clientes where codcli = :nCodCli";
                 var param = ConnFur.DefineParametros();
@@ -29,11 +29,14 @@ namespace NSN.Controllers
                 param.Add("nCodcli", 10125);
 
 
-                var id = ConnFur.SQLSelect<int>(x, param).SingleOrDefault();
+                var obj = await ConnFur.SQLSelect<int>(x, param);
+                var id = obj.SingleOrDefault();
+
+                
 
                 ConnFur.Transacao.Commit();
 
-                ConnFur.FechaConexao();
+                await ConnFur.FechaConexao();
             }
 
             return View();
