@@ -3,6 +3,7 @@ using System.Data;
 using System.Collections.Generic;
 using Dapper;
 using Oracle.ManagedDataAccess.Client;
+using System.Threading.Tasks;
 
 namespace NSN.Biblioteca
 {
@@ -49,13 +50,13 @@ namespace NSN.Biblioteca
             return retornoConexao;
         }
 
-        public bool AbreConexao(bool lTransacao = false)
+        public async Task<bool> AbreConexao(bool lTransacao = false)
         {
             try
             {
                 Conn = new OracleConnection(RetornaStringConexao());
                 {
-                    Conn.Open();
+                    await Conn.OpenAsync();
                     if (Conn.State == ConnectionState.Open)
                     {
                         if (lTransacao)
@@ -74,7 +75,7 @@ namespace NSN.Biblioteca
 
         }
 
-        public IEnumerable<T> SQLSelect<T>(string cSql, object oParam = null)
+        public async Task<IEnumerable<T>> SQLSelect<T>(string cSql, object oParam = null)
         {
             try
             {
@@ -84,7 +85,7 @@ namespace NSN.Biblioteca
                     iTransaction = Transacao;
                 }
 
-                var retorno = Conn.Query<T>(cSql, oParam, iTransaction);
+                var retorno = await Conn.QueryAsync<T>(cSql, oParam, iTransaction);
 
                 return retorno;
             }
@@ -101,7 +102,7 @@ namespace NSN.Biblioteca
             return retorno;
         }
 
-        public void FechaConexao()
+        public async Task FechaConexao()
         {
             try
             {
@@ -109,7 +110,7 @@ namespace NSN.Biblioteca
                 {
                     Transacao = null;
                 }
-                Conn.Close();
+                await Conn.CloseAsync();
             }
             catch (OracleException error)
             {
