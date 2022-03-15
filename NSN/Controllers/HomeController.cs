@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using NSN.Repository;
-
+using System.Collections.Generic;
 
 namespace NSN.Controllers
 {
@@ -22,8 +22,9 @@ namespace NSN.Controllers
         public async Task<IActionResult> Index()
         {
             var stqRepo = new StqRepository();
-            Stq dados = stqRepo.Pesquisa_Referencia_Item("ZM501");
-            return View(dados);
+            List<Stq> dados = stqRepo.Pesquisa_Referencia_Item("ZM501");
+            Stq mostra = dados.Select(m => m).Where(mo => mo.filial == "00").SingleOrDefault();
+            return View(mostra);
         }
 
         public IActionResult Privacy()

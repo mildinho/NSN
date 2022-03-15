@@ -3,15 +3,87 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core Ina Vr1</a>.</p>
+<style>
+    fieldset {
+        background-color: #eeeeee;
+    }
 
+    legend {
+        background-color: gray;
+        color: white;
+        padding: 5px 10px;
+        font-size: 18px;
+    }
 
-    <h1> @Model.Refx </h1>
-    <p>@Model.Descr</p>
-    <p>@Model.pCusto</p>
-    <p>@Model.pVenda</p>
-    <p>@Model.DtCadastro</p>
+</style>
 
-</div>
+<form>
+    <fieldset>
+        <legend>Detalhes do Produto:</legend>
+        <div class="form-group">
+            <div class="form-inline col-12 row">
+                <label asp-for="refx" class="col-1 col-form-label-sm"></label>
+                <input asp-for="refx" type="text" class="col-2 form-control form-control-sm">
+                <label asp-for="descr" class="col-sm-1 col-form-label-sm"></label>
+                <input asp-for="descr" type="text" class="col-4 form-control form-control-sm">
+                <label asp-for="idparceiro" class="col-sm-1 col-form-label-sm"></label>
+                <input asp-for="idparceiro" type="text" class="col-1 form-control form-control-sm">
+                <label asp-for="origidparc" class="col-sm-1 col-form-label-sm"></label>
+                <input asp-for="origidparc" type="text" class="col-1 form-control form-control-sm">
+            </div>
+            <div class="form-inline col-12 row">
+                <label asp-for="conversao" class="col-1 col-form-label-sm"></label>
+                <input asp-for="conversao" type="text" class="col-2 form-control form-control-sm">
+                <label asp-for="nrorig" class="col-sm-1 col-form-label-sm"></label>
+                <input asp-for="nrorig" type="text" class="col-4 form-control form-control-sm">
+                <label asp-for="cdbar" class="col-sm-1 col-form-label-sm"></label>
+                <input asp-for="cdbar" type="text" class="col-1 form-control form-control-sm">
+                <label asp-for="cdbar2" class="col-sm-1 col-form-label-sm"></label>
+                <input asp-for="cdbar2" type="text" class="col-1 form-control form-control-sm">
+            </div>
+            <div class="form-inline col-12 row">
+                <div class="form-inline col-5">
+                    <label asp-for="comp" class="col-2 col-form-label-sm"></label>
+                    <input asp-for="comp" type="text" class="col-1 form-control form-control-sm">
+                    <label asp-for="curvagrupo" class="col-sm-3 col-form-label-sm"></label>
+                    <input asp-for="curvagrupo" type="text" class="col-1 form-control form-control-sm">
+                    <label asp-for="curvaabc" class="col-sm-2 col-form-label-sm"></label>
+                    <input asp-for="curvaabc" type="text" class="col-1 form-control form-control-sm">
+                    <label asp-for="revista" class="col-sm-1 col-form-label-sm"></label>
+                    <input asp-for="revista" type="text" class="col-1 form-control form-control-sm">
+                </div>
+                <div class="form-inline col-7">
+                    <label asp-for="classfisc" class="col-sm-2 col-form-label-sm"></label>
+                    <input asp-for="classfisc" type="text" class="col-2 form-control form-control-sm">
+                    <label asp-for="sittrib" class="col-sm-2 col-form-label-sm"></label>
+                    <input asp-for="sittrib" type="text" class="col-1 form-control form-control-sm">
+                    <label asp-for="unid" class="col-sm-1 col-form-label-sm"></label>
+                    <input asp-for="unid" type="text" class="col-1 form-control form-control-sm">
+                    <label asp-for="qemb" class="col-sm-2 col-form-label-sm"></label>
+                    <input asp-for="qemb" type="text" class="col-1 form-control form-control-sm">
+                </div>
+            </div>
+            <div class="form-inline col-12 row">
+                <div class="form-inline col-5">
+                    <label asp-for="multcomp" class="col-2 col-form-label-sm"></label>
+                    <input asp-for="multcomp" type="text" class="col-1 form-control form-control-sm">
+                    <label asp-for="multi" class="col-sm-3 col-form-label-sm"></label>
+                    <input asp-for="multi" type="text" class="col-1 form-control form-control-sm">
+                    <label asp-for="larg" class="col-sm-2 col-form-label-sm"></label>
+                    <input asp-for="larg" type="text" class="col-1 form-control form-control-sm">
+                    <label asp-for="alt" class="col-sm-1 col-form-label-sm"></label>
+                    <input asp-for="alt" type="text" class="col-1 form-control form-control-sm">
+                </div>
+                <div class="form-inline col-7">
+                    <label asp-for="compr" class="col-sm-2 col-form-label-sm"></label>
+                    <input asp-for="compr" type="text" class="col-2 form-control form-control-sm">
+                    <label asp-for="pesoliq" class="col-sm-2 col-form-label-sm"></label>
+                    <input asp-for="pesoliq" type="text" class="col-1 form-control form-control-sm">
+                    <label asp-for="localx" class="col-sm-1 col-form-label-sm"></label>
+                    <input asp-for="localx" type="text" class="col-1 form-control form-control-sm">
+                </div>
+            </div>
+
+        </div>
+        </fieldset>
+</form>

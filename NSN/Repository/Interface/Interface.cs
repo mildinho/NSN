@@ -6,7 +6,7 @@ namespace NSN.Repository.Interface
 {
     public interface IStq 
     {
-        public Stq Pesquisa_Referencia_Item(string cReferencia);
+        public List<Stq> Pesquisa_Referencia_Item(string cReferencia);
         public List<Stq> Pesquisa_Referencia_Lista(string cReferencia);
     }
     public interface IClientes
