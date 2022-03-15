@@ -1,4 +1,5 @@
-﻿@{
+﻿@model NSN.Models.Stq
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,11 +7,11 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core Ina Vr1</a>.</p>
 
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core Ina Vr1</a>.</p>
 
-    <p>teste 45</p>
-    kkk
+    <h1> @Model.Refx </h1>
+    <p>@Model.Descr</p>
+    <p>@Model.pCusto</p>
+    <p>@Model.pVenda</p>
+    <p>@Model.DtCadastro</p>
 
-    <p>Linha de validacao</p>
-    <p>Linha de validacaozz</p>
 </div>

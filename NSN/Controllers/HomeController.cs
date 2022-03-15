@@ -5,13 +5,14 @@ using NSN.Models;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using NSN.Repository;
+
 
 namespace NSN.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        public Conexao ConnFur = new Conexao(ConexaoName.Furacao);
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -20,26 +21,9 @@ namespace NSN.Controllers
 
         public async Task<IActionResult> Index()
         {
-
-            if (await ConnFur.AbreConexao(true))
-            {
-                string x = @"select codcli from clientes where codcli = :nCodCli";
-                var param = ConnFur.DefineParametros();
-
-                param.Add("nCodcli", 10125);
-
-
-                var obj = await ConnFur.SQLSelect<int>(x, param);
-                var id = obj.SingleOrDefault();
-
-                
-
-                ConnFur.Transacao.Commit();
-
-                await ConnFur.FechaConexao();
-            }
-
-            return View();
+            var stqRepo = new StqRepository();
+            Stq dados = stqRepo.Pesquisa_Referencia_Item("ZM501");
+            return View(dados);
         }
 
         public IActionResult Privacy()

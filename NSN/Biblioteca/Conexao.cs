@@ -1,10 +1,9 @@
-﻿using System;
-using System.Data;
-using System.Collections.Generic;
-using Dapper;
-using Oracle.ManagedDataAccess.Client;
-using System.Threading.Tasks;
+﻿using Dapper;
 using Microsoft.Extensions.Logging;
+using Oracle.ManagedDataAccess.Client;
+using System;
+using System.Collections.Generic;
+using System.Data;
 
 namespace NSN.Biblioteca
 {
@@ -53,13 +52,13 @@ namespace NSN.Biblioteca
             return retornoConexao;
         }
 
-        public async Task<bool> AbreConexao(bool lTransacao = false)
+        public bool AbreConexao(bool lTransacao = false)
         {
             try
             {
                 Conn = new OracleConnection(RetornaStringConexao());
                 {
-                    await Conn.OpenAsync();
+                    Conn.Open();
                     if (Conn.State == ConnectionState.Open)
                     {
                         if (lTransacao)
@@ -79,7 +78,7 @@ namespace NSN.Biblioteca
 
         }
 
-        public async Task<IEnumerable<T>> SQLSelect<T>(string cSql, object oParam = null)
+        public IEnumerable<T> SQLSelect<T>(string cSql, object oParam = null)
         {
             try
             {
@@ -89,7 +88,7 @@ namespace NSN.Biblioteca
                     iTransaction = Transacao;
                 }
 
-                var retorno = await Conn.QueryAsync<T>(cSql, oParam, iTransaction);
+                var retorno = Conn.Query<T>(cSql, oParam, iTransaction);
 
                 return retorno;
             }
@@ -108,7 +107,7 @@ namespace NSN.Biblioteca
             return retorno;
         }
 
-        public async Task FechaConexao()
+        public void FechaConexao()
         {
             try
             {
@@ -116,7 +115,7 @@ namespace NSN.Biblioteca
                 {
                     Transacao = null;
                 }
-                await Conn.CloseAsync();
+                Conn.Close();
             }
             catch (OracleException error)
             {
