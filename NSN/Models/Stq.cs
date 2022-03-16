@@ -18,7 +18,7 @@ namespace NSN.Models
         public string nrorig { get; set; }
         [Display(Name = "Conversão")] 
         public string conversao { get; set; }
-        [Display(Name = "UN.")]
+        [Display(Name = "Un.")]
         public string unid { get; set; }
         public long pmedio { get; set; }
         public long pultrep { get; set; }
@@ -48,6 +48,7 @@ namespace NSN.Models
         public int qemb { get; set; }
         [Display(Name = "Peso Liq.")]
         public int pesoliq { get; set; }
+        [Display(Name = "Dt. Ultima Entrada")]
         public DateTime dtconf { get; set; }
         public string numnf { get; set; }
         public int meta1 { get; set; }
@@ -68,6 +69,7 @@ namespace NSN.Models
         public string ulrepocant { get; set; }
         public int sdcontag1 { get; set; }
         public int sdcontag2 { get; set; }
+        [Display(Name = "Disponivel")]
         public string indisp { get; set; }
         public string indispfut { get; set; }
         public string promoqt { get; set; }
@@ -112,6 +114,7 @@ namespace NSN.Models
         public int flagpreco { get; set; }
         public DateTime dtinic { get; set; }
         public long emax_exced { get; set; }
+        [Display(Name = "Bloq. Compras")]
         public string bloqcompra { get; set; }
         [Display(Name = "Curva Forn.")]
         public string curvaabc { get; set; }
@@ -124,6 +127,7 @@ namespace NSN.Models
         public string digitador1 { get; set; }
         public string digitador2 { get; set; }
         public int transito { get; set; }
+        [Display(Name = "Nr. Fabrica")]
         public string nrfabr { get; set; }
         public string grupostq { get; set; }
         public string subgstq { get; set; }
@@ -139,10 +143,11 @@ namespace NSN.Models
         public DateTime data399 { get; set; }
         public string tipopec { get; set; }
         public string nome_img { get; set; }
-        [Display(Name = "Parceiro")]
+        [Display(Name = "Forn. Atual")]
         public string idparceiro { get; set; }
         [Display(Name = "Forn. Origem")]
         public string origidparc { get; set; }
+        [Display(Name = "Forn. Ult. Reposição")]
         public string idultrep { get; set; }
         public long pfiscal { get; set; }
         public int mediamani { get; set; }
@@ -153,12 +158,14 @@ namespace NSN.Models
         public int precolib2 { get; set; }
         [Display(Name = "Revista")]
         public string revista { get; set; }
+        [Display(Name = "Cobra Frete")]
         public string cobrafrete { get; set; }
         public DateTime datalib { get; set; }
         public long pultrepfre { get; set; }
         public long adc_pis { get; set; }
         public long adc_cofins { get; set; }
         public long suframa { get; set; }
+        [Display(Name = "Prod. Importado")]
         public string importado { get; set; }
         public DateTime dtvalidade { get; set; }
         public int precolib3 { get; set; }

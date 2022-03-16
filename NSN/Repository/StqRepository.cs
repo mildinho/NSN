@@ -42,7 +42,7 @@ namespace NSN.Repository
                             reserva     , 
                             emax        , 
                             emin        , 
-                            localx      , 
+                            substr(localx,1,2)||'.'||substr(localx,5,1)||'.'||substr(localx,3,2) localx  ,
                             nlocal      , 
                             qemb        , 
                             pesoliq     , 
