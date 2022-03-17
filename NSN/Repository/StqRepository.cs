@@ -162,10 +162,19 @@ namespace NSN.Repository
                             from vw_stq_geral sg where refx = :cRefx";
             var param = ConnFur.DefineParametros();
 
-            ConnFur.AbreConexao();
-            param.Add("cRefx", creferencia);
-            List<Stq> retorno = ConnFur.SQLSelect<Stq>(csql, param).ToList();
-            ConnFur.FechaConexao();
+            List<Stq> retorno = null;
+            if (ConnFur.AbreConexao())
+            {
+                try
+                {
+                    param.Add("cRefx", creferencia);
+                    retorno = ConnFur.SQLSelect<Stq>(csql, param).ToList();
+                }
+                finally
+                {
+                    ConnFur.FechaConexao();
+                }
+            }
             return retorno;
         }
 
