@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NSN.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,18 @@ namespace NSN
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton<Repository.Interface.IEmpresa, EmpresaRepository>();
+
+            services.AddMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromHours(1);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

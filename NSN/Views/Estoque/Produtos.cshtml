@@ -5,7 +5,7 @@
 
 <style>
     fieldset {
-/*        background-color: #eeeeee; */
+        /*        background-color: #eeeeee; */
         box-shadow: 2px 2px 5px gray;
         margin-top: 10px;
     }
@@ -15,7 +15,7 @@
         color: white;
         padding: 5px 10px;
         font-size: 15px;
-        box-shadow: 2px 0px 5px gray; 
+        box-shadow: 2px 0px 5px gray;
     }
 
     .flabel {
@@ -40,12 +40,11 @@
             Detalhes do Produto:
             <div class="d-flex align-items-center d-inline-flex ml-auto">
                 <span class="mx-2">Filial</span>
-                <select class="flabel custom-select" name="cars" id="cars">
-                    <option value="00">00-Matriz</option>
-                    <option value="A1">A1-Manaus</option>
-                    <option value="BA">BA-salvador</option>
-                    <option value="BH">BH-Belo Horizonte</option>
+
+                <select class="flabel custom-select" asp-items="@ViewBag.Empresas">
+                    <option value="">Selecione a Empresa</option>
                 </select>
+
             </div>
         </legend>
         <div class="form-group mx-3">

@@ -9,8 +9,15 @@ namespace NSN.Repository.Interface
         public List<Stq> Pesquisa_Referencia_Item(string cReferencia);
         public List<Stq> Pesquisa_Referencia_Lista(string cReferencia);
     }
-    public interface IClientes
+    public interface ICliente
     {
         public Stq Pesquisa_Clientes_Codigo(int nCodCli);
     }
+
+
+    public interface IEmpresa
+    {
+        public List<Empresa> Listar_TodasEmpresas();
+    }
+
 }
