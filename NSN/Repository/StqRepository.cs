@@ -159,7 +159,7 @@ namespace NSN.Repository
                             quembloq    ,
                             filial      ,
                             (select comprador from vw_fornec_geral fg where fg.filial = sg.filial and fg.idparceiro = sg.idparceiro) comp
-                            from vw_stq_geral sg where refx = :cRefx";
+                            from vw_stq_geral sg where refx like :cRefx||'%'";
 
             var param = ConnFur.DefineParametros();
             List<Stq> retorno =  new List<Stq>();
