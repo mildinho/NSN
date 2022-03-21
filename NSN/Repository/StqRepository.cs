@@ -11,7 +11,7 @@ namespace NSN.Repository
     {
         public Conexao ConnFur = new Conexao(ConexaoName.Furacao);
 
-        public List<Stq> Pesquisa_Referencia_Item(string creferencia)
+        public List<Stq> Pesquisa_Referencia_Item(string creferencia,string cfilial=null)
         {
             string csql = @"select 
                             refx        , 
@@ -160,14 +160,22 @@ namespace NSN.Repository
                             filial      ,
                             (select comprador from vw_fornec_geral fg where fg.filial = sg.filial and fg.idparceiro = sg.idparceiro) comp
                             from vw_stq_geral sg where refx = :cRefx";
-            var param = ConnFur.DefineParametros();
 
-            List<Stq> retorno = null;
+            var param = ConnFur.DefineParametros();
+            List<Stq> retorno =  new List<Stq>();
+
             if (ConnFur.AbreConexao())
             {
                 try
                 {
                     param.Add("cRefx", creferencia);
+
+                    if (cfilial != null)
+                    {
+                        csql += " and filial = :cFilial";
+                        param.Add("cFilial", cfilial);
+                    }
+
                     retorno = ConnFur.SQLSelect<Stq>(csql, param).ToList();
                 }
                 finally

@@ -33,7 +33,7 @@
     }
 </style>
 
-<form>
+<form id="f424">
     <!-- Detalhe do Produto -->
     <fieldset>
         <legend class="d-flex align-items-center">
@@ -41,7 +41,7 @@
             <div class="d-flex align-items-center d-inline-flex ml-auto">
                 <span class="mx-2">Filial</span>
 
-                <select class="flabel custom-select" asp-items="@ViewBag.Empresas">
+                <select class="flabel custom-select" asp-items="@ViewBag.Empresas" id="selectempresa" value="@ViewBag.Filial" onchange="Muda_Empresa()">
                     <option value="">Selecione a Empresa</option>
                 </select>
 
@@ -296,3 +296,20 @@
         </div>
     </div>
 </form>
+
+
+<script>
+    function Muda_Empresa() {
+        var EmpSelecionada = document.getElementById("selectempresa").value;
+        console.log(EmpSelecionada);
+        $.ajax({
+            method: "GET",
+            url: "/Estoque/Produtos",
+            data: { Filial: EmpSelecionada },
+            success: function (data) {
+                $("#f424").html(data);
+            }
+        })
+
+    }
+</script>

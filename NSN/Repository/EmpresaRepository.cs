@@ -19,7 +19,7 @@ namespace NSN.Repository
                             FROM nota_empresa where ATIVO = :Ativo AND IMOVEIS = :Imoveis Order by Nome_Fantasia";
             var param = ConnFur.DefineParametros();
 
-            List<Empresa> retorno = null;
+            List<Empresa> retorno = new List<Empresa>();
             if (ConnFur.AbreConexao())
             {
                 try

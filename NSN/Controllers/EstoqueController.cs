@@ -10,25 +10,33 @@ namespace NSN.Controllers
     public class EstoqueController : Controller
     {
         private readonly Repository.Interface.IEmpresa _repositoryEmpresa;
+        StqRepository STQRepository = new StqRepository();
+        List<Stq> dados;
+
         public EstoqueController(Repository.Interface.IEmpresa empresa)
         {
+
             _repositoryEmpresa = empresa;
+
+
+
         }
 
 
 
-        public IActionResult Produtos()
+        public IActionResult Produtos(string Filial = "00")
         {
 
             var empresa = _repositoryEmpresa.Listar_TodasEmpresas();
-            ViewBag.Empresas = empresa.Select(a => new SelectListItem(a.Nome_Fantasia, a.Id.ToString()));
+            ViewBag.Empresas = empresa.Select(a => new SelectListItem(a.Nome_Fantasia, a.Filial,(a.Filial==Filial)));
+            ViewBag.Filial = Filial;
 
-
-            var stqRepo = new StqRepository();
-            List<Stq> dados = stqRepo.Pesquisa_Referencia_Item("ZM501");
-            Stq mostra = dados.Select(m => m).Where(mo => mo.filial == "00").SingleOrDefault();
-            return View("Produtos", mostra);
+            
+            Stq dados = STQRepository.Pesquisa_Referencia_Item("ZM501",Filial).SingleOrDefault();
+            return View("Produtos", dados);
 
         }
+
+
     }
 }
