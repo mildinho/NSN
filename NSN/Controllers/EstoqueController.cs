@@ -37,7 +37,15 @@ namespace NSN.Controllers
             if (!String.IsNullOrEmpty(Referencia))
             {
                 dados = STQRepository.Pesquisa_Referencia_Item(Referencia, Filial).FirstOrDefault();
+                if (dados == null)
+                {
+                    dados = new Stq();
+                    ModelState.AddModelError("Error", "teste");
+                    
+
+                }
             }
+            
             return View("Produtos", dados);
 
         }
