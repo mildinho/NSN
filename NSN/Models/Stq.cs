@@ -20,21 +20,34 @@ namespace NSN.Models
         public string conversao { get; set; }
         [Display(Name = "Un.")]
         public string unid { get; set; }
-        public long pmedio { get; set; }
-        public long pultrep { get; set; }
-        public long ptabela1 { get; set; }
-        public long ptabela2 { get; set; }
-        public long percipi { get; set; }
+        [Display(Name = "Médio")]
+        public decimal pmedio { get; set; }
+        [Display(Name = "Ultima Rep.")]
+        public decimal pultrep { get; set; }
+        [Display(Name = "Tabela 1")]
+        public decimal ptabela1 { get; set; }
+        [Display(Name = "Tabela 2")]
+        public decimal ptabela2 { get; set; }
+        [Display(Name = "% Ipi")]
+        public decimal percipi { get; set; }
         [Display(Name = "Sit. Trib.")]
         public string sittrib { get; set; }
+        [Display(Name = "% Icms")]
         public int aliqicms { get; set; }
-        public long pvatacado { get; set; }
-        public long pvendaant { get; set; }
-        public long pvenda { get; set; }
-        public long pvendafut { get; set; }
-        public long pofertant { get; set; }
-        public long pofert { get; set; }
-        public long pofertfut { get; set; }
+        [Display(Name = "Atacado Atu.")]
+        public decimal pvatacado { get; set; }
+        [Display(Name = "Venda Ant.")]
+        public decimal pvendaant { get; set; }
+        [Display(Name = "Venda Atu")]
+        public decimal pvenda { get; set; }
+        [Display(Name = "Venda Fut.")]
+        public decimal pvendafut { get; set; }
+        [Display(Name = "Oferta Ant.")]
+        public decimal pofertant { get; set; }
+        [Display(Name = "Oferta Atu.")]
+        public decimal pofert { get; set; }
+        [Display(Name = "Oferta Fut.")]
+        public decimal pofertfut { get; set; }
         public string ultrepoc { get; set; }
         public int sdcomp { get; set; }
         public int saldo { get; set; }
@@ -63,8 +76,8 @@ namespace NSN.Models
         public int meta10 { get; set; }
         public int meta11 { get; set; }
         public int meta12 { get; set; }
-        public long pmedioant { get; set; }
-        public long pultrepant { get; set; }
+        public decimal pmedioant { get; set; }
+        public decimal pultrepant { get; set; }
         public int saldoant { get; set; }
         public string ulrepocant { get; set; }
         public int sdcontag1 { get; set; }
@@ -74,21 +87,21 @@ namespace NSN.Models
         public string indispfut { get; set; }
         public string promoqt { get; set; }
         [Display(Name = "Larg.")]
-        public long larg { get; set; }
+        public decimal larg { get; set; }
         [Display(Name = "Alt.")]
-        public long alt { get; set; }
+        public decimal alt { get; set; }
         [Display(Name = "Compr.")]
-        public long compr { get; set; }
-        public long cubi { get; set; }
+        public decimal compr { get; set; }
+        public decimal cubi { get; set; }
         [Display(Name = "Mult. Venda")]
         public int multi { get; set; }
         public int vmax { get; set; }
         public int minqt { get; set; }
-        public long valorprom { get; set; }
+        public decimal valorprom { get; set; }
         public DateTime dtctg { get; set; }
         public string rpctg { get; set; }
-        public long rankq { get; set; }
-        public long ranql { get; set; }
+        public decimal rankq { get; set; }
+        public decimal ranql { get; set; }
         public int pkmin { get; set; }
         public int pkmax { get; set; }
         public int pksd { get; set; }
@@ -98,11 +111,11 @@ namespace NSN.Models
         public string blohi { get; set; }
         public string blohf { get; set; }
         public int minqt2 { get; set; }
-        public long valorprom2 { get; set; }
+        public decimal valorprom2 { get; set; }
         public string grupo { get; set; }
         public string subgrupo { get; set; }
-        public long p_desc_nor { get; set; }
-        public long p_desc_esp { get; set; }
+        public decimal p_desc_nor { get; set; }
+        public decimal p_desc_esp { get; set; }
         public DateTime dt_val_des { get; set; }
         public int desc_comp { get; set; }
         public string ref2 { get; set; }
@@ -113,12 +126,12 @@ namespace NSN.Models
         public int flagcampo { get; set; }
         public int flagpreco { get; set; }
         public DateTime dtinic { get; set; }
-        public long emax_exced { get; set; }
+        public decimal emax_exced { get; set; }
         [Display(Name = "Bloq. Compras")]
         public string bloqcompra { get; set; }
         [Display(Name = "Curva Forn.")]
         public string curvaabc { get; set; }
-        public long porcentabc { get; set; }
+        public decimal porcentabc { get; set; }
         public DateTime dtcadastro { get; set; }
         public int utembforn { get; set; }
         public int embfornvol { get; set; }
@@ -131,14 +144,16 @@ namespace NSN.Models
         public string nrfabr { get; set; }
         public string grupostq { get; set; }
         public string subgstq { get; set; }
-        public long sttabcmp { get; set; }
+        [Display(Name = "% Subs. Trib.")] 
+        public decimal sttabcmp { get; set; }
         public int aliqicms2 { get; set; }
         public int aliqicms3 { get; set; }
+        [Display(Name = "Desc. Oferta")]
         public int descofert { get; set; }
         public string fornorig { get; set; }
         public string fornultrep { get; set; }
-        public long sttabcmpfu { get; set; }
-        public long preco_dia { get; set; }
+        public decimal sttabcmpfu { get; set; }
+        public decimal preco_dia { get; set; }
         public string disponivel { get; set; }
         public DateTime data399 { get; set; }
         public string tipopec { get; set; }
@@ -149,7 +164,7 @@ namespace NSN.Models
         public string origidparc { get; set; }
         [Display(Name = "Forn. Ult. Reposição")]
         public string idultrep { get; set; }
-        public long pfiscal { get; set; }
+        public decimal pfiscal { get; set; }
         public int mediamani { get; set; }
         public int mmani1 { get; set; }
         public int mmani2 { get; set; }
@@ -161,10 +176,10 @@ namespace NSN.Models
         [Display(Name = "Cobra Frete")]
         public string cobrafrete { get; set; }
         public DateTime datalib { get; set; }
-        public long pultrepfre { get; set; }
-        public long adc_pis { get; set; }
-        public long adc_cofins { get; set; }
-        public long suframa { get; set; }
+        public decimal pultrepfre { get; set; }
+        public decimal adc_pis { get; set; }
+        public decimal adc_cofins { get; set; }
+        public decimal suframa { get; set; }
         [Display(Name = "Prod. Importado")]
         public string importado { get; set; }
         public DateTime dtvalidade { get; set; }
@@ -174,12 +189,20 @@ namespace NSN.Models
         [Display(Name = "Curva Grupo")] 
         public string curvagrupo { get; set; }
         public string prcerrado { get; set; }
-        public long pultreps { get; set; }
-        public long pmedios { get; set; }
+        public decimal pultreps { get; set; }
+        public decimal pmedios { get; set; }
         public string quembloq { get; set; }
         public string filial { get; set; }
         [Display(Name = "Comprador")] 
         public string comp { get; set; }
+        [Display(Name = "% Oferta")] 
+        public decimal percof { get; set; }
+        [Display(Name = "% Custo")]
+        public decimal desc_nor2 { get; set; }
+        [Display(Name = "% Venda")]
+        public decimal polvdesc { get; set; }
+        [Display(Name = "% MKUP")]
+        public decimal polvmarg { get; set; }
 
     }
 }
