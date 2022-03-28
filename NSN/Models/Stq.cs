@@ -38,7 +38,7 @@ namespace NSN.Models
         public decimal pvatacado { get; set; }
         [Display(Name = "Venda Ant.")]
         public decimal pvendaant { get; set; }
-        [Display(Name = "Venda Atu")]
+        [Display(Name = "Venda Atu.")]
         public decimal pvenda { get; set; }
         [Display(Name = "Venda Fut.")]
         public decimal pvendafut { get; set; }
@@ -144,7 +144,7 @@ namespace NSN.Models
         public string nrfabr { get; set; }
         public string grupostq { get; set; }
         public string subgstq { get; set; }
-        [Display(Name = "% Subs. Trib.")] 
+        [Display(Name = "% St")] 
         public decimal sttabcmp { get; set; }
         public int aliqicms2 { get; set; }
         public int aliqicms3 { get; set; }

@@ -128,15 +128,15 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <label asp-for="multi" class="flabel col-form-label-sm"></label>
-                                <input asp-for="multi" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="multi" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-6">
                                 <label asp-for="multcomp" class="flabel col-form-label-sm"></label>
-                                <input asp-for="multcomp" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="multcomp" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-6">
                                 <label asp-for="qemb" class="flabel col-form-label-sm"></label>
-                                <input asp-for="qemb" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="qemb" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                         </div>
                         <p class="text-success sd">Fiscal</p>
@@ -159,21 +159,21 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <label asp-for="larg" class="flabel col-form-label-sm"></label>
-                                <input asp-for="larg" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="larg" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-6">
                                 <label asp-for="alt" class="flabel col-form-label-sm"></label>
-                                <input asp-for="alt" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="alt" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <label asp-for="compr" class="flabel col-form-label-sm"></label>
-                                <input asp-for="compr" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="compr" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-6">
                                 <label asp-for="pesoliq" class="flabel col-form-label-sm"></label>
-                                <input asp-for="pesoliq" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="pesoliq" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                         </div>
                         <p class="text-success sd">Curva</p>
@@ -227,83 +227,187 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group mx-3">
 
                 <div class="row">
-                    <div class="col-3">
-                        <!-- Precidficacao -->
-                        <p class="text-success sd">Preço de Venda e Custos</p>
+
+
+                    <!--<div class="col-3">-->
+                    <!-- Precidficacao -->
+                    <!--<p class="text-success sd">Preço de Venda</p>
                         <div class="row">
                             <div class="col-sm-4">
                                 <label asp-for="pvendaant" class="flabel col-form-label-sm"></label>
-                                <input asp-for="pvendaant" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="pvendaant" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-4">
                                 <label asp-for="pvenda" class="flabel col-form-label-sm"></label>
-                                <input asp-for="pvenda" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="pvenda" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-4">
                                 <label asp-for="pvendafut" class="flabel col-form-label-sm"></label>
-                                <input asp-for="pvendafut   " class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="pvendafut   " class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-4">
                                 <label asp-for="pofertant" class="flabel col-form-label-sm"></label>
-                                <input asp-for="pofertant" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="pofertant" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-4">
                                 <label asp-for="pofert" class="flabel col-form-label-sm"></label>
-                                <input asp-for="pofert" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="pofert" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-4">
                                 <label asp-for="pofertfut" class="flabel col-form-label-sm"></label>
-                                <input asp-for="pofertfut   " class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="pofertfut   " class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-4">
                                 <label asp-for="percof" class="flabel col-form-label-sm"></label>
-                                <input asp-for="percof" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="percof" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-4">
                                 <label asp-for="descofert" class="flabel col-form-label-sm"></label>
-                                <input asp-for="descofert" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="descofert" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-4">
                                 <label asp-for="pvatacado" class="flabel col-form-label-sm"></label>
-                                <input asp-for="pvatacado" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="pvatacado" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                         </div>
+                    </div>
+
+                    <div class="col-2">
+                        <p class="text-success sd">Preço de Tabela</p>
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                                 <label asp-for="ptabela1" class="flabel col-form-label-sm"></label>
-                                <input asp-for="ptabela1" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="ptabela1" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                                 <label asp-for="ptabela2" class="flabel col-form-label-sm"></label>
-                                <input asp-for="ptabela2" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="ptabela2" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                         </div>
+                        <p class="text-success sd">Impostos</p>
                         <div class="row">
                             <div class="col-sm-4">
                                 <label asp-for="aliqicms" class="flabel col-form-label-sm"></label>
-                                <input asp-for="aliqicms" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="aliqicms" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-4">
                                 <label asp-for="sttabcmp" class="flabel col-form-label-sm"></label>
-                                <input asp-for="sttabcmp" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="sttabcmp" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
                             <div class="col-sm-4">
                                 <label asp-for="percipi" class="flabel col-form-label-sm"></label>
-                                <input asp-for="percipi" class="mt-0 form-control form-control-sm" type="text">
+                                <input asp-for="percipi" class="mt-0 text-right form-control form-control-sm" type="text">
                             </div>
+
+                        </div>
+                    </div>-->
+                    @*<p class="text-success sd">Perc. Custo</p>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label asp-for="desc_nor2" class="flabel col-form-label-sm"></label>
+                                <input asp-for="desc_nor2" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-4">
+                                <label asp-for="polvdesc" class="flabel col-form-label-sm"></label>
+                                <input asp-for="polvdesc" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-4">
+                                <label asp-for="polvmarg" class="flabel col-form-label-sm"></label>
+                                <input asp-for="polvmarg" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+
+                        </div>*@
+
+
+
+                    <div class="col-5">
+                        <!-- Precidficacao -->
+                        <div class="row">
+                            <p class="col-6 text-success sd">Preço de Venda</p>
+                            <p class="col-6 text-success sd">Preço de Tabela</p>
                         </div>
 
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label asp-for="pvendaant" class="flabel col-form-label-sm"></label>
+                                <input asp-for="pvendaant" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="pvenda" class="flabel col-form-label-sm"></label>
+                                <input asp-for="pvenda" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="pvendafut" class="flabel col-form-label-sm"></label>
+                                <input asp-for="pvendafut   " class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="ptabela1" class="flabel col-form-label-sm"></label>
+                                <input asp-for="ptabela1" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="ptabela2" class="flabel col-form-label-sm"></label>
+                                <input asp-for="ptabela2" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
 
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label asp-for="pofertant" class="flabel col-form-label-sm"></label>
+                                <input asp-for="pofertant" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="pofert" class="flabel col-form-label-sm"></label>
+                                <input asp-for="pofert" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="pofertfut" class="flabel col-form-label-sm"></label>
+                                <input asp-for="pofertfut   " class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+
+                            <p class="col-6 text-success sd" style="padding-top:30px">Impostos</p>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label asp-for="percof" class="flabel col-form-label-sm"></label>
+                                <input asp-for="percof" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="descofert" class="flabel col-form-label-sm"></label>
+                                <input asp-for="descofert" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="pvatacado" class="flabel col-form-label-sm"></label>
+                                <input asp-for="pvatacado" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="aliqicms" class="flabel col-form-label-sm"></label>
+                                <input asp-for="aliqicms" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="sttabcmp" class="flabel col-form-label-sm"></label>
+                                <input asp-for="sttabcmp" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <label asp-for="percipi" class="flabel col-form-label-sm"></label>
+                                <input asp-for="percipi" class="mt-0 text-right form-control form-control-sm" type="text">
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="col-3">
+
+
+
+
+
+
+                    <div class="col-2">
                         <!-- Metas -->
                         <p class="text-success sd">Metas</p>
                         <div class="mx-3 mb-3">
@@ -321,38 +425,38 @@
                             <div class="row">
                                 <div class="d-flex d-inline-flex align-items-center px-1">
                                     <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">1</label>
-                                    <input asp-for="meta1" class="mx-1 form-control form-control-sm" type="text">
-                                    <input asp-for="meta1" class="mx-1 form-control form-control-sm" type="text">
+                                    <input asp-for="meta1" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    <input asp-for="meta1" class="mx-1 text-right form-control form-control-sm" type="text">
                                 </div>
                                 <div class="d-flex d-inline-flex align-items-center px-1">
                                     <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">2</label>
-                                    <input asp-for="meta2" class="mx-1 form-control form-control-sm" type="text">
-                                    <input asp-for="meta2" class="mx-1 form-control form-control-sm" type="text">
+                                    <input asp-for="meta2" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    <input asp-for="meta2" class="mx-1 text-right form-control form-control-sm" type="text">
                                 </div>
                                 <div class="d-flex d-inline-flex align-items-center px-1">
                                     <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">3</label>
-                                    <input asp-for="meta3" class="mx-1 form-control form-control-sm" type="text">
-                                    <input asp-for="meta3" class="mx-1 form-control form-control-sm" type="text">
+                                    <input asp-for="meta3" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    <input asp-for="meta3" class="mx-1 text-right form-control form-control-sm" type="text">
                                 </div>
                                 <div class="d-flex d-inline-flex align-items-center px-1">
                                     <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">4</label>
-                                    <input asp-for="meta4" class="mx-1 form-control form-control-sm" type="text">
-                                    <input asp-for="meta4" class="mx-1 form-control form-control-sm" type="text">
+                                    <input asp-for="meta4" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    <input asp-for="meta4" class="mx-1 text-right form-control form-control-sm" type="text">
                                 </div>
                                 <div class="d-flex d-inline-flex align-items-center px-1">
                                     <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">5</label>
-                                    <input asp-for="meta5" class="mx-1 form-control form-control-sm" type="text">
-                                    <input asp-for="meta5" class="mx-1 form-control form-control-sm" type="text">
+                                    <input asp-for="meta5" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    <input asp-for="meta5" class="mx-1 text-right form-control form-control-sm" type="text">
                                 </div>
                                 <div class="d-flex d-inline-flex align-items-center px-1">
                                     <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">6</label>
-                                    <input asp-for="meta6" class="mx-1 form-control form-control-sm" type="text">
-                                    <input asp-for="meta6" class="mx-1 form-control form-control-sm" type="text">
+                                    <input asp-for="meta6" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    <input asp-for="meta6" class="mx-1 text-right form-control form-control-sm" type="text">
                                 </div>
                                 <div class="d-flex d-inline-flex align-items-center px-1">
                                     <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">7</label>
-                                    <input asp-for="meta7" class="mx-1 form-control form-control-sm" type="text">
-                                    <input asp-for="meta7" class="mx-1 form-control form-control-sm" type="text">
+                                    <input asp-for="meta7" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    <input asp-for="meta7" class="mx-1 text-right form-control form-control-sm" type="text">
                                 </div>
                             </div>
 
@@ -364,7 +468,12 @@
                         <p class="text-success sd">Estoque</p>
 
                     </div>
+
                 </div>
+
+
+
+
             </div>
         </fieldset>
 

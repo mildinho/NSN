@@ -166,7 +166,7 @@ namespace NSN.Repository
                             from vw_stq_geral sg 
                             inner join vw_fornec_geral fg on fg.filial = sg.filial and fg.idparceiro = sg.idparceiro
                             inner join vw_policomp_geral pg on pg.filial = sg.filial and pg.idparceiro = sg.idparceiro
-                            where sg.refx like :cRefx||'%'";
+                            where sg.refx = :cRefx";
 
             var param = ConnFur.DefineParametros();
             List<Stq> retorno =  new List<Stq>();
