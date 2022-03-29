@@ -1,6 +1,8 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Logging;
 using Oracle.ManagedDataAccess.Client;
+using Serilog;
+using Serilog.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +19,6 @@ namespace NSN.Biblioteca
     public class Conexao
     {
 
-        private readonly ILogger _logger;
         private ConexaoName ConexaoAtiva { get; set; }
         private string Host { get; set; }
         private string UserName { get; set; }
@@ -72,7 +73,7 @@ namespace NSN.Biblioteca
             }
             catch (OracleException error)
             {
-                _logger.LogError(error.Message);
+                Log.Error(error.ToString());
                 return false;
             };
 
@@ -94,8 +95,8 @@ namespace NSN.Biblioteca
             }
             catch (OracleException error)
             {
-                
-                _logger.LogError(error.Message);
+
+                Log.Error(error.ToString());
                 return null;
             };
 
@@ -119,7 +120,8 @@ namespace NSN.Biblioteca
             }
             catch (OracleException error)
             {
-                _logger.LogError(error.Message);
+                Log.Error(error.ToString());
+
             }
         }
 

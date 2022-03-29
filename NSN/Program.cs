@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,36 @@ namespace NSN
 {
     public class Program
     {
+        //public static void Main(string[] args)
+        //{
+        //    CreateHostBuilder(args).Build().Run();
+        //}
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.File("nsn.txt", rollingInterval: RollingInterval.Day, retainedFileCountLimit: null)
+                .CreateLogger();
+
+            try
+            {
+                Log.Information("Iniciando Aplicacao....");
+                CreateHostBuilder(args).Build().Run();
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex, "Falha ao Iniciar Aplicacao...");
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
         }
+
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .UseSerilog()
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

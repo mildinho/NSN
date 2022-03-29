@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NSN.Repository;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,10 @@ namespace NSN
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            // Add this line; you'll need `using Serilog;` up the top, too
+            app.UseSerilogRequestLogging();
+
 
             app.UseRouting();
 
