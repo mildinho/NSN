@@ -175,12 +175,12 @@ namespace NSN.Repository
             {
                 try
                 {
-                    param.Add("cRefx", creferencia);
+                    param.Add("cRefx", creferencia.ToUpper());
 
                     if (cfilial != null)
                     {
                         csql += " and sg.filial = :cFilial";
-                        param.Add("cFilial", cfilial);
+                        param.Add("cFilial", cfilial.ToUpper());
                     }
 
                     retorno = ConnFur.SQLSelect<Stq>(csql, param).ToList();

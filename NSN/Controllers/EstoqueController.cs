@@ -11,8 +11,7 @@ namespace NSN.Controllers
     public class EstoqueController : Controller
     {
         private readonly Repository.Interface.IEmpresa _repositoryEmpresa;
-        StqRepository STQRepository = new StqRepository();
-        List<Stq> dados;
+        private readonly StqRepository STQRepository = new StqRepository();
 
         public EstoqueController(Repository.Interface.IEmpresa empresa)
         {
@@ -40,8 +39,6 @@ namespace NSN.Controllers
                 if (dados == null)
                 {
                     dados = new Stq();
-                    ModelState.AddModelError("Error", "teste");
-                    
 
                 }
             }
