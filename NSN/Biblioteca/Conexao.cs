@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Logging;
 using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Dynamic;
 using Serilog;
 using Serilog.Core;
 using System;
@@ -79,7 +80,7 @@ namespace NSN.Biblioteca
 
         }
 
-        public IEnumerable<T> SQLSelect<T>(string cSql, object oParam = null)
+        public IEnumerable<T> SQLSelect<T>(string cSql, object oParam = null,CommandType? oCommandType = null)
         {
             try
             {
@@ -89,7 +90,7 @@ namespace NSN.Biblioteca
                     iTransaction = Transacao;
                 }
 
-                var retorno = Conn.Query<T>(cSql, oParam, iTransaction);
+                var retorno = Conn.Query<T>(cSql, oParam, iTransaction,true,null,oCommandType);
 
                 return retorno;
             }
@@ -102,9 +103,9 @@ namespace NSN.Biblioteca
 
         }
 
-        public DynamicParameters DefineParametros()
+        public OracleDynamicParameters DefineParametros()
         {
-            var retorno = new DynamicParameters();
+            var retorno = new OracleDynamicParameters();
             return retorno;
         }
 
