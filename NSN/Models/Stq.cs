@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace NSN.Models
@@ -203,6 +204,13 @@ namespace NSN.Models
         public decimal polvdesc { get; set; }
         [Display(Name = "% MKUP")]
         public decimal polvmarg { get; set; }
+        public List<metasemana> metasemana { get; set; }
 
+    }
+
+    public class metasemana
+    {
+        public long semana { get; set; }
+        public long vndqtde { get; set; }
     }
 }

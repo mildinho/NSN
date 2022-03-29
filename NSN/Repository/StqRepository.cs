@@ -1,7 +1,10 @@
 ﻿using NSN.Biblioteca;
 using NSN.Models;
+using Oracle.ManagedDataAccess.Types;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,8 +14,9 @@ namespace NSN.Repository
     {
         public Conexao ConnFur = new Conexao(ConexaoName.Furacao);
 
-        public List<Stq> Pesquisa_Referencia_Item(string creferencia,string cfilial=null)
+        public List<Stq> Pesquisa_Referencia_Item(string creferencia, string cfilial = null)
         {
+            string cproc = @"furacaophp.metas_por_semana(NULL,:cFilial, :cRefx, 7, :Metas)";
             string csql = @"select 
                             sg.refx        , 
                             sg.cdbar       , 
@@ -169,12 +173,13 @@ namespace NSN.Repository
                             where sg.refx = :cRefx";
 
             var param = ConnFur.DefineParametros();
-            List<Stq> retorno =  new List<Stq>();
+            List<Stq> retorno = new List<Stq>();
 
             if (ConnFur.AbreConexao())
             {
                 try
                 {
+
                     param.Add("cRefx", creferencia);
 
                     if (cfilial != null)
@@ -184,6 +189,27 @@ namespace NSN.Repository
                     }
 
                     retorno = ConnFur.SQLSelect<Stq>(csql, param).ToList();
+
+                    if (retorno != null)
+                    {
+                        foreach (var filiais in retorno)
+                        {
+                            var paramp = ConnFur.DefineParametros();
+                            paramp.Add("IDPARCEIRO", null,DbType.String);
+                            paramp.Add("FILIAL", filiais.filial,DbType.String);
+                            paramp.Add("REFX", creferencia,DbType.String);
+                            paramp.Add("QTDSEMANA", 7,DbType.Int32);
+                            paramp.Add("REPINFO", dbType: OracleDbType.RefCursor, direction: ParameterDirection.Output);
+                            CommandType commandType = CommandType.StoredProcedure;
+
+                            var results = ConnFur.SQLSelect<metasemana>("furacaophp.metas_por_semana", paramp,commandType).ToList();
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
                 finally
                 {
