@@ -212,5 +212,13 @@ namespace NSN.Models
     {
         public long semana { get; set; }
         public long vndqtde { get; set; }
+        public DateTime dini { get; set; }
+        public DateTime dfim { get; set; }
+        public long cncqtde { get; set; }
+        public long dvlqtde { get; set; }
+        public long metaorig { get; set; }
+        public long saldo { get; set; }
+        public long temvenda { get; set; }
+        public long saldoorig { get; set; }
     }
 }

@@ -1,0 +1,195 @@
+2022-03-30 10:18:29.881 -03:00 [INF] Iniciando Aplicacao....
+2022-03-30 10:18:30.778 -03:00 [INF] User profile is available. Using 'C:\Users\luiz.veronezzi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-03-30 10:18:31.102 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-03-30 10:18:31.102 -03:00 [INF] Hosting environment: Development
+2022-03-30 10:18:31.102 -03:00 [INF] Content root path: C:\Users\luiz.veronezzi\Documents\NSN\NSN
+2022-03-30 10:18:31.127 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/  
+2022-03-30 10:18:31.146 -03:00 [INF] Executing endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:18:31.182 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NSN.Controllers.HomeController (NSN).
+2022-03-30 10:18:31.209 -03:00 [INF] Executing ViewResult, running view Index.
+2022-03-30 10:18:31.320 -03:00 [INF] Executed ViewResult - view Index executed in 127.0198ms.
+2022-03-30 10:18:31.321 -03:00 [INF] Executed action NSN.Controllers.HomeController.Index (NSN) in 138.3464ms
+2022-03-30 10:18:31.321 -03:00 [INF] Executed endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:18:31.322 -03:00 [INF] HTTP GET / responded 200 in 186.3491 ms
+2022-03-30 10:18:31.324 -03:00 [INF] Request finished in 199.7518ms 200 text/html; charset=utf-8
+2022-03-30 10:18:31.337 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/lib/font-awesome/css/all.min.css  
+2022-03-30 10:18:31.337 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/lib/limonte-sweetalert2/sweetalert2.all.min.js  
+2022-03-30 10:18:31.337 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/lib/bootstrap/dist/css/bootstrap.min.css  
+2022-03-30 10:18:31.339 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/lib/limonte-sweetalert2/sweetalert2.min.css  
+2022-03-30 10:18:31.339 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/lib/font-awesome/js/all.min.js  
+2022-03-30 10:18:31.355 -03:00 [INF] The file /lib/limonte-sweetalert2/sweetalert2.min.css was not modified
+2022-03-30 10:18:31.355 -03:00 [INF] The file /lib/font-awesome/css/all.min.css was not modified
+2022-03-30 10:18:31.355 -03:00 [INF] The file /lib/limonte-sweetalert2/sweetalert2.all.min.js was not modified
+2022-03-30 10:18:31.355 -03:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2022-03-30 10:18:31.355 -03:00 [INF] The file /lib/font-awesome/js/all.min.js was not modified
+2022-03-30 10:18:31.357 -03:00 [INF] Request finished in 19.8136ms 304 text/css
+2022-03-30 10:18:31.357 -03:00 [INF] Request finished in 17.5398ms 304 application/javascript
+2022-03-30 10:18:31.357 -03:00 [INF] Request finished in 19.8826ms 304 text/css
+2022-03-30 10:18:31.357 -03:00 [INF] Request finished in 19.87ms 304 text/css
+2022-03-30 10:18:31.357 -03:00 [INF] Request finished in 19.8772ms 304 application/javascript
+2022-03-30 10:18:31.426 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/lib/font-awesome/webfonts/fa-solid-900.woff2  
+2022-03-30 10:18:31.426 -03:00 [INF] The file /lib/font-awesome/webfonts/fa-solid-900.woff2 was not modified
+2022-03-30 10:18:31.426 -03:00 [INF] Request finished in 0.3526ms 304 font/woff2
+2022-03-30 10:18:33.337 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos  
+2022-03-30 10:18:33.340 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:18:33.349 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:18:34.053 -03:00 [INF] Executing ViewResult, running view Produtos.
+2022-03-30 10:18:34.332 -03:00 [INF] Executed ViewResult - view Produtos executed in 284.3146ms.
+2022-03-30 10:18:34.333 -03:00 [INF] Executed action NSN.Controllers.EstoqueController.Produtos (NSN) in 983.6912ms
+2022-03-30 10:18:34.333 -03:00 [INF] Executed endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:18:34.333 -03:00 [INF] HTTP GET /Estoque/Produtos responded 200 in 995.0359 ms
+2022-03-30 10:18:34.333 -03:00 [INF] Request finished in 995.972ms 200 text/html; charset=utf-8
+2022-03-30 10:18:36.978 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos?Referencia=ZM501&Filial=00  
+2022-03-30 10:18:36.979 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:18:36.980 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:19:12.300 -03:00 [INF] Iniciando Aplicacao....
+2022-03-30 10:19:13.177 -03:00 [INF] User profile is available. Using 'C:\Users\luiz.veronezzi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-03-30 10:19:13.491 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-03-30 10:19:13.491 -03:00 [INF] Hosting environment: Development
+2022-03-30 10:19:13.491 -03:00 [INF] Content root path: C:\Users\luiz.veronezzi\Documents\NSN\NSN
+2022-03-30 10:19:13.514 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/  
+2022-03-30 10:19:13.527 -03:00 [INF] Executing endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:19:13.563 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NSN.Controllers.HomeController (NSN).
+2022-03-30 10:19:13.593 -03:00 [INF] Executing ViewResult, running view Index.
+2022-03-30 10:19:13.676 -03:00 [INF] Executed ViewResult - view Index executed in 102.6418ms.
+2022-03-30 10:19:13.677 -03:00 [INF] Executed action NSN.Controllers.HomeController.Index (NSN) in 113.8289ms
+2022-03-30 10:19:13.678 -03:00 [INF] Executed endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:19:13.679 -03:00 [INF] HTTP GET / responded 200 in 160.9686 ms
+2022-03-30 10:19:13.682 -03:00 [INF] Request finished in 170.3748ms 200 text/html; charset=utf-8
+2022-03-30 10:19:15.328 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos  
+2022-03-30 10:19:15.331 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:19:15.343 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:19:16.076 -03:00 [INF] Executing ViewResult, running view Produtos.
+2022-03-30 10:19:16.359 -03:00 [INF] Executed ViewResult - view Produtos executed in 286.6149ms.
+2022-03-30 10:19:16.359 -03:00 [INF] Executed action NSN.Controllers.EstoqueController.Produtos (NSN) in 1015.7324ms
+2022-03-30 10:19:16.359 -03:00 [INF] Executed endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:19:16.359 -03:00 [INF] HTTP GET /Estoque/Produtos responded 200 in 1030.0537 ms
+2022-03-30 10:19:16.359 -03:00 [INF] Request finished in 1031.1896ms 200 text/html; charset=utf-8
+2022-03-30 10:19:18.905 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos?Referencia=ZM501&Filial=00  
+2022-03-30 10:19:18.906 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:19:18.907 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:19:34.206 -03:00 [INF] Iniciando Aplicacao....
+2022-03-30 10:19:35.045 -03:00 [INF] User profile is available. Using 'C:\Users\luiz.veronezzi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-03-30 10:19:35.390 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-03-30 10:19:35.390 -03:00 [INF] Hosting environment: Development
+2022-03-30 10:19:35.390 -03:00 [INF] Content root path: C:\Users\luiz.veronezzi\Documents\NSN\NSN
+2022-03-30 10:19:35.412 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/  
+2022-03-30 10:19:35.425 -03:00 [INF] Executing endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:19:35.460 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NSN.Controllers.HomeController (NSN).
+2022-03-30 10:19:35.488 -03:00 [INF] Executing ViewResult, running view Index.
+2022-03-30 10:19:35.573 -03:00 [INF] Executed ViewResult - view Index executed in 101.9985ms.
+2022-03-30 10:19:35.574 -03:00 [INF] Executed action NSN.Controllers.HomeController.Index (NSN) in 113.9451ms
+2022-03-30 10:19:35.575 -03:00 [INF] Executed endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:19:35.576 -03:00 [INF] HTTP GET / responded 200 in 159.5975 ms
+2022-03-30 10:19:35.579 -03:00 [INF] Request finished in 170.6551ms 200 text/html; charset=utf-8
+2022-03-30 10:19:36.833 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos  
+2022-03-30 10:19:36.836 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:19:36.844 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:19:37.539 -03:00 [INF] Executing ViewResult, running view Produtos.
+2022-03-30 10:19:37.817 -03:00 [INF] Executed ViewResult - view Produtos executed in 283.9853ms.
+2022-03-30 10:19:37.818 -03:00 [INF] Executed action NSN.Controllers.EstoqueController.Produtos (NSN) in 973.095ms
+2022-03-30 10:19:37.818 -03:00 [INF] Executed endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:19:37.818 -03:00 [INF] HTTP GET /Estoque/Produtos responded 200 in 984.0760 ms
+2022-03-30 10:19:37.818 -03:00 [INF] Request finished in 985.2746ms 200 text/html; charset=utf-8
+2022-03-30 10:19:40.290 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos?Referencia=ZM501&Filial=00  
+2022-03-30 10:19:40.291 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:19:40.292 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:21:22.096 -03:00 [INF] Executing ViewResult, running view Produtos.
+2022-03-30 10:21:22.116 -03:00 [INF] Executed ViewResult - view Produtos executed in 20.4514ms.
+2022-03-30 10:21:22.116 -03:00 [INF] Executed action NSN.Controllers.EstoqueController.Produtos (NSN) in 101824.1957ms
+2022-03-30 10:21:22.116 -03:00 [INF] Executed endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:21:22.116 -03:00 [INF] HTTP GET /Estoque/Produtos responded 200 in 101825.7445 ms
+2022-03-30 10:21:22.116 -03:00 [INF] Request finished in 101826.4475ms 200 text/html; charset=utf-8
+2022-03-30 10:22:55.497 -03:00 [INF] Iniciando Aplicacao....
+2022-03-30 10:22:56.365 -03:00 [INF] User profile is available. Using 'C:\Users\luiz.veronezzi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-03-30 10:22:57.024 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-03-30 10:22:57.024 -03:00 [INF] Hosting environment: Development
+2022-03-30 10:22:57.024 -03:00 [INF] Content root path: C:\Users\luiz.veronezzi\Documents\NSN\NSN
+2022-03-30 10:22:57.046 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/  
+2022-03-30 10:22:57.060 -03:00 [INF] Executing endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:22:57.099 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NSN.Controllers.HomeController (NSN).
+2022-03-30 10:22:57.129 -03:00 [INF] Executing ViewResult, running view Index.
+2022-03-30 10:22:57.220 -03:00 [INF] Executed ViewResult - view Index executed in 110.4679ms.
+2022-03-30 10:22:57.221 -03:00 [INF] Executed action NSN.Controllers.HomeController.Index (NSN) in 121.8782ms
+2022-03-30 10:22:57.221 -03:00 [INF] Executed endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:22:57.222 -03:00 [INF] HTTP GET / responded 200 in 172.2569 ms
+2022-03-30 10:22:57.225 -03:00 [INF] Request finished in 181.3746ms 200 text/html; charset=utf-8
+2022-03-30 10:22:58.551 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos  
+2022-03-30 10:22:58.554 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:22:58.562 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:22:59.271 -03:00 [INF] Executing ViewResult, running view Produtos.
+2022-03-30 10:22:59.555 -03:00 [INF] Executed ViewResult - view Produtos executed in 287.9366ms.
+2022-03-30 10:22:59.555 -03:00 [INF] Executed action NSN.Controllers.EstoqueController.Produtos (NSN) in 992.8365ms
+2022-03-30 10:22:59.555 -03:00 [INF] Executed endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:22:59.558 -03:00 [INF] HTTP GET /Estoque/Produtos responded 200 in 1003.8235 ms
+2022-03-30 10:22:59.558 -03:00 [INF] Request finished in 1007.557ms 200 text/html; charset=utf-8
+2022-03-30 10:23:02.247 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos?Referencia=ZM501&Filial=00  
+2022-03-30 10:23:02.249 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:23:02.249 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:24:13.937 -03:00 [INF] Executing ViewResult, running view Produtos.
+2022-03-30 10:24:13.957 -03:00 [INF] Executed ViewResult - view Produtos executed in 21.9103ms.
+2022-03-30 10:24:13.957 -03:00 [INF] Executed action NSN.Controllers.EstoqueController.Produtos (NSN) in 71708.2932ms
+2022-03-30 10:24:13.957 -03:00 [INF] Executed endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:24:13.957 -03:00 [INF] HTTP GET /Estoque/Produtos responded 200 in 71709.7223 ms
+2022-03-30 10:24:13.958 -03:00 [INF] Request finished in 71710.4865ms 200 text/html; charset=utf-8
+2022-03-30 10:27:45.977 -03:00 [INF] Iniciando Aplicacao....
+2022-03-30 10:27:46.968 -03:00 [INF] User profile is available. Using 'C:\Users\luiz.veronezzi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-03-30 10:27:47.338 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-03-30 10:27:47.338 -03:00 [INF] Hosting environment: Development
+2022-03-30 10:27:47.338 -03:00 [INF] Content root path: C:\Users\luiz.veronezzi\Documents\NSN\NSN
+2022-03-30 10:27:47.361 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/  
+2022-03-30 10:27:47.375 -03:00 [INF] Executing endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:27:47.410 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NSN.Controllers.HomeController (NSN).
+2022-03-30 10:27:47.439 -03:00 [INF] Executing ViewResult, running view Index.
+2022-03-30 10:27:47.547 -03:00 [INF] Executed ViewResult - view Index executed in 125.0173ms.
+2022-03-30 10:27:47.548 -03:00 [INF] Executed action NSN.Controllers.HomeController.Index (NSN) in 136.8347ms
+2022-03-30 10:27:47.548 -03:00 [INF] Executed endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:27:47.549 -03:00 [INF] HTTP GET / responded 200 in 183.2667 ms
+2022-03-30 10:27:47.551 -03:00 [INF] Request finished in 193.7526ms 200 text/html; charset=utf-8
+2022-03-30 10:27:48.701 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos  
+2022-03-30 10:27:48.704 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:27:48.713 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:27:49.428 -03:00 [INF] Executing ViewResult, running view Produtos.
+2022-03-30 10:27:49.706 -03:00 [INF] Executed ViewResult - view Produtos executed in 284.2521ms.
+2022-03-30 10:27:49.706 -03:00 [INF] Executed action NSN.Controllers.EstoqueController.Produtos (NSN) in 992.2877ms
+2022-03-30 10:27:49.706 -03:00 [INF] Executed endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:27:49.706 -03:00 [INF] HTTP GET /Estoque/Produtos responded 200 in 1004.6434 ms
+2022-03-30 10:27:49.706 -03:00 [INF] Request finished in 1005.5948ms 200 text/html; charset=utf-8
+2022-03-30 10:27:51.881 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos?Referencia=ZM501&Filial=00  
+2022-03-30 10:27:51.882 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:27:51.883 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:28:36.333 -03:00 [INF] Executing ViewResult, running view Produtos.
+2022-03-30 10:28:36.349 -03:00 [INF] Executed ViewResult - view Produtos executed in 15.5452ms.
+2022-03-30 10:28:36.349 -03:00 [INF] Executed action NSN.Controllers.EstoqueController.Produtos (NSN) in 44466.1338ms
+2022-03-30 10:28:36.349 -03:00 [INF] Executed endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:28:36.349 -03:00 [INF] HTTP GET /Estoque/Produtos responded 200 in 44467.7005 ms
+2022-03-30 10:28:36.349 -03:00 [INF] Request finished in 44468.3876ms 200 text/html; charset=utf-8
+2022-03-30 10:29:54.246 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos?Referencia=ZM501&Filial=00  
+2022-03-30 10:29:54.250 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:29:54.251 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:31:49.432 -03:00 [INF] Iniciando Aplicacao....
+2022-03-30 10:31:50.263 -03:00 [INF] User profile is available. Using 'C:\Users\luiz.veronezzi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-03-30 10:31:50.645 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-03-30 10:31:50.645 -03:00 [INF] Hosting environment: Development
+2022-03-30 10:31:50.646 -03:00 [INF] Content root path: C:\Users\luiz.veronezzi\Documents\NSN\NSN
+2022-03-30 10:31:50.668 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/  
+2022-03-30 10:31:50.681 -03:00 [INF] Executing endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:31:50.716 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NSN.Controllers.HomeController (NSN).
+2022-03-30 10:31:50.748 -03:00 [INF] Executing ViewResult, running view Index.
+2022-03-30 10:31:50.834 -03:00 [INF] Executed ViewResult - view Index executed in 107.172ms.
+2022-03-30 10:31:50.835 -03:00 [INF] Executed action NSN.Controllers.HomeController.Index (NSN) in 118.6903ms
+2022-03-30 10:31:50.835 -03:00 [INF] Executed endpoint 'NSN.Controllers.HomeController.Index (NSN)'
+2022-03-30 10:31:50.836 -03:00 [INF] HTTP GET / responded 200 in 164.2811 ms
+2022-03-30 10:31:50.839 -03:00 [INF] Request finished in 172.766ms 200 text/html; charset=utf-8
+2022-03-30 10:31:52.798 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos  
+2022-03-30 10:31:52.801 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:31:52.810 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).
+2022-03-30 10:31:53.473 -03:00 [INF] Executing ViewResult, running view Produtos.
+2022-03-30 10:31:53.746 -03:00 [INF] Executed ViewResult - view Produtos executed in 276.2992ms.
+2022-03-30 10:31:53.746 -03:00 [INF] Executed action NSN.Controllers.EstoqueController.Produtos (NSN) in 935.6464ms
+2022-03-30 10:31:53.746 -03:00 [INF] Executed endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:31:53.746 -03:00 [INF] HTTP GET /Estoque/Produtos responded 200 in 947.3081 ms
+2022-03-30 10:31:53.746 -03:00 [INF] Request finished in 948.5641ms 200 text/html; charset=utf-8
+2022-03-30 10:31:56.303 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44304/Estoque/Produtos?Referencia=ZM501&Filial=00  
+2022-03-30 10:31:56.304 -03:00 [INF] Executing endpoint 'NSN.Controllers.EstoqueController.Produtos (NSN)'
+2022-03-30 10:31:56.305 -03:00 [INF] Route matched with {action = "Produtos", controller = "Estoque"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Produtos(System.String, System.String) on controller NSN.Controllers.EstoqueController (NSN).

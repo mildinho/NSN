@@ -1,12 +1,10 @@
-﻿using NSN.Biblioteca;
+﻿using Dapper.Oracle;
+using NSN.Biblioteca;
 using NSN.Models;
-using Oracle.ManagedDataAccess.Types;
-using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace NSN.Repository
 {
@@ -16,7 +14,7 @@ namespace NSN.Repository
 
         public List<Stq> Pesquisa_Referencia_Item(string creferencia, string cfilial = null)
         {
-            string cproc = @"furacaophp.metas_por_semana(NULL,:cFilial, :cRefx, 7, :Metas)";
+
             string csql = @"select 
                             sg.refx        , 
                             sg.cdbar       , 
@@ -194,14 +192,16 @@ namespace NSN.Repository
                         foreach (var filiais in retorno)
                         {
                             var paramp = ConnFur.DefineParametros();
-                            paramp.Add("IDPARCEIRO", null,DbType.String);
-                            paramp.Add("FILIAL", filiais.filial,DbType.String);
-                            paramp.Add("REFX", creferencia,DbType.String);
-                            paramp.Add("QTDSEMANA", 7,DbType.Int32);
-                            paramp.Add("REPINFO", dbType: OracleDbType.RefCursor, direction: ParameterDirection.Output);
+
+                            paramp.Add("IDPARCEIRO", null);
+                            paramp.Add("FILIAL", filiais.filial);
+                            paramp.Add("REFX", creferencia);
+                            paramp.Add("QTDSEMANA", 8);
+                            paramp.Add("REPINFO", dbType: OracleMappingType.RefCursor , direction: ParameterDirection.Output);
                             CommandType commandType = CommandType.StoredProcedure;
 
-                            var results = ConnFur.SQLSelect<metasemana>("furacaophp.metas_por_semana", paramp,commandType).ToList();
+                            var results = ConnFur.SQLSelect<metasemana>("FURACAOPHP.METAS_POR_SEMANA", paramp, commandType).ToList();
+                            filiais.metasemana = results;
                         }
                     }
 

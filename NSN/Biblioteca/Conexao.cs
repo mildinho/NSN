@@ -1,9 +1,7 @@
 ﻿using Dapper;
-using Microsoft.Extensions.Logging;
+using Dapper.Oracle;
 using Oracle.ManagedDataAccess.Client;
-using Oracle.ManagedDataAccess.Dynamic;
 using Serilog;
-using Serilog.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -99,8 +97,12 @@ namespace NSN.Biblioteca
 
                 Log.Error(error.ToString());
                 return null;
-            };
-
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString());
+                return null;
+            }    
         }
 
         public OracleDynamicParameters DefineParametros()
