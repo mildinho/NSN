@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NSN.Biblioteca;
 using NSN.Repository;
 using Serilog;
 using System;
@@ -25,16 +27,34 @@ namespace NSN
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
             services.AddControllersWithViews();
             services.AddSingleton<Repository.Interface.IEmpresa, EmpresaRepository>();
 
             services.AddMemoryCache();
+
+            
+            
+            services.AddScoped<Cookie>();
+            
+            
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+            
+           
+
+
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromHours(1);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
+
 
 
 
@@ -63,6 +83,8 @@ namespace NSN
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //app.UseCookiePolicy();
 
             app.UseEndpoints(endpoints =>
             {
