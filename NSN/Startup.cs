@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace NSN
 {
@@ -28,24 +29,21 @@ namespace NSN
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpContextAccessor();
+
             services.AddControllersWithViews();
             services.AddSingleton<Repository.Interface.IEmpresa, EmpresaRepository>();
 
             services.AddMemoryCache();
-
-            
-            
-            services.AddScoped<Cookie>();
-            
-            
+           
+           
             services.Configure<CookiePolicyOptions>(options =>
             {
 
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            
-           
+
+
 
 
             services.AddSession(options =>
@@ -55,6 +53,9 @@ namespace NSN
                 options.Cookie.IsEssential = true;
             });
 
+
+
+            services.AddScoped<Cookie>();
 
 
 
@@ -84,7 +85,8 @@ namespace NSN
 
             app.UseAuthorization();
 
-            //app.UseCookiePolicy();
+            app.UseCookiePolicy();
+
 
             app.UseEndpoints(endpoints =>
             {
