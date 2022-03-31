@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -9,10 +8,6 @@ using NSN.Biblioteca;
 using NSN.Repository;
 using Serilog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
 
 namespace NSN
 {
@@ -85,7 +80,7 @@ namespace NSN
 
             app.UseAuthorization();
 
-            app.UseCookiePolicy();
+            //app.UseCookiePolicy();
 
 
             app.UseEndpoints(endpoints =>

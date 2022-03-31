@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace NSN.Biblioteca
 {
@@ -21,7 +19,14 @@ namespace NSN.Biblioteca
             CookieOptions options = new CookieOptions();
             options.Expires = DateTime.Now.AddDays(7);
 
-            _contexto.HttpContext.Response.Cookies.Append(Key, Valor, options);
+            try
+            {
+                _contexto.HttpContext.Response.Cookies.Append(Key, Valor, options);
+            }
+            catch (Exception x)
+            {
+                
+            }
 
         }
 

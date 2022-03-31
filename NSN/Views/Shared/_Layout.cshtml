@@ -4,7 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NSN</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @{
+        var TemTema = Context.Request.Cookies["Configuracao_Tema"];
+        if (TemTema != null)
+        {
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/OLD-bootstrap.min.css" />
+        }
+        else
+        {
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        }
+    }
+
+
+
     <link rel="stylesheet" href="~/lib/limonte-sweetalert2/sweetalert2.min.css" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
