@@ -21,14 +21,12 @@ namespace NSN.Controllers
         {
 
             _repositoryEmpresa = empresa;
-/*
+
             _cookie = cookie;
             _cookie.Cadastrar(Key, "Vamos fuder...");
 
             string minharolha = "";
             minharolha = _cookie.Consultar(Key);
-
-            */
 
         }
 
