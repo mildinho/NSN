@@ -200,7 +200,7 @@ namespace NSN.Repository
                             paramp.Add("REPINFO", dbType: OracleMappingType.RefCursor , direction: ParameterDirection.Output);
                             CommandType commandType = CommandType.StoredProcedure;
 
-                            var results = ConnFur.SQLSelect<metasemana>("FURACAOPHP.METAS_POR_SEMANA", paramp, commandType).ToList();
+                            var results = ConnFur.SQLSelect<metasemana>("FURACAOPHP.METAS_POR_SEMANA", paramp, commandType).OrderBy(x => x.semana).ToList();
                             filiais.metasemana = results;
                         }
                     }

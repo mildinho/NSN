@@ -423,41 +423,67 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="d-flex d-inline-flex align-items-center px-1">
-                                    <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">1</label>
-                                    <input asp-for="meta1" class="mx-1 text-right form-control form-control-sm" type="text">
-                                    <input asp-for="meta1" class="mx-1 text-right form-control form-control-sm" type="text">
-                                </div>
-                                <div class="d-flex d-inline-flex align-items-center px-1">
-                                    <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">2</label>
-                                    <input asp-for="meta2" class="mx-1 text-right form-control form-control-sm" type="text">
-                                    <input asp-for="meta2" class="mx-1 text-right form-control form-control-sm" type="text">
-                                </div>
-                                <div class="d-flex d-inline-flex align-items-center px-1">
-                                    <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">3</label>
-                                    <input asp-for="meta3" class="mx-1 text-right form-control form-control-sm" type="text">
-                                    <input asp-for="meta3" class="mx-1 text-right form-control form-control-sm" type="text">
-                                </div>
-                                <div class="d-flex d-inline-flex align-items-center px-1">
-                                    <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">4</label>
-                                    <input asp-for="meta4" class="mx-1 text-right form-control form-control-sm" type="text">
-                                    <input asp-for="meta4" class="mx-1 text-right form-control form-control-sm" type="text">
-                                </div>
-                                <div class="d-flex d-inline-flex align-items-center px-1">
-                                    <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">5</label>
-                                    <input asp-for="meta5" class="mx-1 text-right form-control form-control-sm" type="text">
-                                    <input asp-for="meta5" class="mx-1 text-right form-control form-control-sm" type="text">
-                                </div>
-                                <div class="d-flex d-inline-flex align-items-center px-1">
-                                    <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">6</label>
-                                    <input asp-for="meta6" class="mx-1 text-right form-control form-control-sm" type="text">
-                                    <input asp-for="meta6" class="mx-1 text-right form-control form-control-sm" type="text">
-                                </div>
-                                <div class="d-flex d-inline-flex align-items-center px-1">
-                                    <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">7</label>
-                                    <input asp-for="meta7" class="mx-1 text-right form-control form-control-sm" type="text">
-                                    <input asp-for="meta7" class="mx-1 text-right form-control form-control-sm" type="text">
-                                </div>
+
+                                @{
+                                    if (Model.metasemana != null)
+                                    {
+                                        int metanum = 1;
+                                        int metamen = 0;
+                                        string cc = "";
+                                        foreach (var metas in Model.metasemana)
+                                        {
+                                            cc = "Model.meta" + metanum.ToString();
+
+
+                                            int.TryParse(cc, out metamen);
+
+
+                                            <div class="d-flex d-inline-flex align-items-center px-1">
+                                                <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">@metanum</label>
+                                                <input asp-for="@metas.vndqtde" class="mx-1 text-right form-control form-control-sm" type="text">
+                                                <input asp-for="@metamen" class="mx-1 text-right form-control form-control-sm" type="text">
+                                            </div>
+                                            metanum++;
+                                        }
+                                    }
+                                }
+
+
+                                @*<div class="d-flex d-inline-flex align-items-center px-1">
+                                        <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">1</label>
+                                        <input asp-for="metasemana[0].vndqtde" class="mx-1 text-right form-control form-control-sm" type="text">
+                                        <input asp-for="meta1" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    </div>
+                                    <div class="d-flex d-inline-flex align-items-center px-1">
+                                        <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">2</label>
+                                        <input asp-for="metasemana[1].vndqtde" class="mx-1 text-right form-control form-control-sm" type="text">
+                                        <input asp-for="meta2" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    </div>
+                                    <div class="d-flex d-inline-flex align-items-center px-1">
+                                        <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">3</label>
+                                        <input asp-for="metasemana[2].vndqtde" class="mx-1 text-right form-control form-control-sm" type="text">
+                                        <input asp-for="meta3" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    </div>
+                                    <div class="d-flex d-inline-flex align-items-center px-1">
+                                        <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">4</label>
+                                        <input asp-for="metasemana[3].vndqtde" class="mx-1 text-right form-control form-control-sm" type="text">
+                                        <input asp-for="meta4" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    </div>
+                                    <div class="d-flex d-inline-flex align-items-center px-1">
+                                        <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">5</label>
+                                        <input asp-for="meta5" class="mx-1 text-right form-control form-control-sm" type="text">
+                                        <input asp-for="meta5" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    </div>
+                                    <div class="d-flex d-inline-flex align-items-center px-1">
+                                        <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">6</label>
+                                        <input asp-for="meta6" class="mx-1 text-right form-control form-control-sm" type="text">
+                                        <input asp-for="meta6" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    </div>
+                                    <div class="d-flex d-inline-flex align-items-center px-1">
+                                        <label class="d-flex justify-content-center col-sm-2 flabel col-form-label-sm">7</label>
+                                        <input asp-for="meta7" class="mx-1 text-right form-control form-control-sm" type="text">
+                                        <input asp-for="meta7" class="mx-1 text-right form-control form-control-sm" type="text">
+                                    </div>*@
                             </div>
 
                         </div>
