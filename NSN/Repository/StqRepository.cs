@@ -12,9 +12,9 @@ namespace NSN.Repository
     {
         public Conexao ConnFur = new Conexao(ConexaoName.Furacao);
 
-        public List<Stq> Pesquisa_Referencia_Item(string creferencia, string cfilial = null)
+        public List<Stq> Pesquisa_Referencia_Item(string creferencia , string cfilial = null)
         {
-
+            creferencia = (creferencia == null ? " " : creferencia);
             string csql = @"select 
                             sg.refx        , 
                             sg.cdbar       , 
@@ -187,7 +187,7 @@ namespace NSN.Repository
 
                     retorno = ConnFur.SQLSelect<Stq>(csql, param).ToList();
 
-                    if (retorno != null)
+                    if (retorno.Count > 0)
                     {
                         foreach (var filiais in retorno)
                         {
@@ -197,11 +197,37 @@ namespace NSN.Repository
                             paramp.Add("FILIAL", filiais.filial);
                             paramp.Add("REFX", creferencia);
                             paramp.Add("QTDSEMANA", 8);
-                            paramp.Add("REPINFO", dbType: OracleMappingType.RefCursor , direction: ParameterDirection.Output);
+                            paramp.Add("REPINFO", dbType: OracleMappingType.RefCursor, direction: ParameterDirection.Output);
                             CommandType commandType = CommandType.StoredProcedure;
 
                             var results = ConnFur.SQLSelect<metasemana>("FURACAOPHP.METAS_POR_SEMANA", paramp, commandType).OrderBy(x => x.semana).ToList();
-                            filiais.metasemana = results;
+                            if (results != null)
+                            {
+                                filiais.metasemana = results;
+                            }
+                            else
+                            {
+                                var ms = new List<metasemana>();
+                                for (int i = 0; i < 7; i++)
+                                {
+                                    ms.Add(new metasemana { });
+                                }
+                                filiais.metasemana = ms;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        retorno = new List<Stq>();
+                        retorno.Add(new Stq { });
+                        foreach (var filiais in retorno)
+                        {
+                            var ms = new List<metasemana>();
+                            for (int i = 0; i < 7; i++)
+                            {
+                                ms.Add(new metasemana { });
+                            }
+                            filiais.metasemana = ms;
                         }
                     }
 
